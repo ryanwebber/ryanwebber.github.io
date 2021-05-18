@@ -4,17 +4,87 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <base target="_top">
-<style type="text/css">body{margin:0 auto;padding:12vmin 20vmin;max-width:50em;word-wrap: break-word;} h1{font-weight: bold;letter-spacing:-1px;line-height:1;font-size:120px} html{text-align:center;color: #111;font-family:'Helvetica Neue',sans-serif;font-size:40px;background-color:#f2e018}</style>
+        <style type="text/css">body{margin:0 auto;padding:12vmin 10vmin;max-width:50em;line-height:1.5em;font-family: -apple-system,BlinkMacSystemFont,sans-serif;word-wrap: break-word;}</style>
         <style type="text/css" media="print">.dontprint{ display: none; }</style>
         <link rel="icon" href="data:image/png;base64,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" integrity="sha256-k5G1JqBp+DS4ZB+MBFR3RfDLpKV5vl1NWXO+5v/oTPc=" />
     </head>
     <body>
         <section>
-            <h1>ryanwebber.ca</h1>
-            <p>there is nothing here yet...</p>
-            <p>but don't worry...</p>
-            <p>because someday I'll think of something...</p>
+            <h2>Ryan Webber</h2>
+            <p class="dontprint"><small><a href="mailto:wbbr.ryan@gmail.com">wbbr.ryan@gmail.com</a> | <a href="https://github.com/ryanwebber">github.com/ryanwebber</a></small></p>
+            <hr/>
+            <p>
+                <em>Bachelor's of Computer Science &nbsp;|&nbsp; University of Waterloo</em>
+                <br/>
+                <em>Bachelor's of Business Administration &nbsp;|&nbsp; Wilfrid Laurier University</em>
+            </p>
+        </section>
+        <hr/>
+        <section>
+            <h3>Apple Inc.</h3>
+            <p>
+                <em>
+                    Software Engineer<br/>
+                    Core Siri<br/>
+                    2017+<br/>
+                </em>
+                <ul>
+                    <li>Core contributor to domain-facing Siri platform api, feature additions such as request handoff across devices</li>
+                    <li>Core contributor to dialogging api's for error handling, intent confirmation, intent handling, and intent filling</li>
+                    <li>Core contributor to the planning and development of replacement api's for SiriKit for internal and external developers</li>
+                    <li><em>Etc: </em>contributions to code generation, domain integration testing framework, gradle tasks, datetime parsing</li>
+                </ul>
+                <small><strong>Java (JDK 8,10)</strong>, Typescript, Gradle, Protobuf</small>
+            </p>
+        </section>
+        <hr/>
+        <section>
+            <h3>eSentire Inc.</h3>
+            <p>
+                <em>
+                    Software Engineer (Intern)<br/>
+                    Networking Team<br/>
+                    Fall 2016<br/>
+                </em>
+                <ul>
+                    <li>State machine design and implementation for filetype detection and analysis in tcp streams</li>
+                    <li>Implemented language parsers for a policy language used to trigger events and define actions for events</li>
+                    <li>Designed and implemented customer facing network configuration tools backed by the standard unix networking tools with a ncurses front-end</li>
+                </ul>
+                <small><strong>C++11</strong>, GNU build suite, GoogleTest + GoogleMock</small>
+            </p>
+        </section>
+        <hr/>
+        <section>
+            <h3>Sequence LLC.</h3>
+            <p>
+                <em>
+                    Web/iOS Engineer (Intern)<br/>
+                    Winter 2016<br/>
+                </em>
+                <ul>
+                    <li>Primary developer for tvOS port of popular Ellen DeGeneres iOS game</li>
+                    <li>Lead developer of vehicle diagnostic IOS framework, developed drivers for Bluetooth LE dongles with support for CAN 11-bit BUS format</li>
+                    <li>Machine learning research and prototyping with Google TensorFlow</li>
+                </ul>
+                <small>ObjectiveC, Swift, Python3</small>
+            </p>
+        </section>
+        <hr/>
+        <section>
+            <h3>Encircle Inc.</h3>
+            <p>
+                <em>
+                    Web/iOS Engineer (Intern)<br/>
+                    Winter 2015<br/>
+                </em>
+                <ul>
+                    <li>Major feature additions to iOS application, accompanying changes on web interface with supporting functionality to Python webserver and SQL database</li>
+                    <li>Complete iOS redesign spanning multiple iterations</li>
+                    <li><em>Etc: </em>Improved geolocation components, developed new payments infrastructure (to reflect new revenue model) with Stripe, camera enhancements, greatly improved memory efficiency, ARC migration</li>
+                </ul>
+                <small>ObjectiveC, JS, Python2.7</small>
+            </p>
         </section>
     </body>
 </html>
-
