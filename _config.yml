@@ -1,0 +1,27 @@
+url: "https://ryanwebber.github.io"
+baseurl: ""
+title: "Ryan Webber"
+
+collections_dir: content
+collections:
+  work:
+    output: false
+    order:
+      - apple-siri-platform.md
+  projects:
+    output: true
+    order:
+      - u.md
+      - dolly.md
+      - wordboy.md
+      - moonshot.md
+      - rum.md
+      - weechess.md
+      - weechess-rs.md
+      - gillian.md
+      - raybaby.md
+      - blossim.md
+      - mandelscope.md
+      - i8080emu.md
+      - neyowm.md
+      - bore.md

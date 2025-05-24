@@ -1,0 +1,124 @@
+// -------------- THEME SWITCHER -------------- //
+@mixin dark-appearance {
+  filter: invert(1);
+
+  img {
+    filter: invert(1);
+
+    &.ioda {
+      filter: invert(0);
+    }
+  }
+
+  .emoji {
+    filter: invert(1);
+  }
+
+  iframe {
+    filter: invert(1);
+  }
+}
+
+body[a="dark"] {
+  @include dark-appearance;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  body[a="auto"] {
+    @include dark-appearance;
+  }
+}
+
+// -------------- BASE STYLES -------------- //
+
+html,
+body {
+  background: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: black;
+  font-family: "Courier New", monospace;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+  overflow-wrap: break-word;
+  max-width: 40em;
+  margin: 0 auto;
+  padding: 2em 1em 8em 1em;
+}
+
+.post-meta {
+  text-align: right;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 3rem;
+}
+
+hr {
+  margin: 1rem 0;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+li {
+  margin: 0.4rem 0;
+}
+
+*:target {
+  background: yellow;
+}
+
+.w {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+hr {
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid;
+}
+
+code {
+  color: #323232;
+  background: #F8F8F8;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+div.highlighter-rouge code {
+  display: block;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  padding: 1rem;
+}
+
+blockquote {
+  font-style: italic;
+  border: thin solid black;
+  padding: 1rem;
+
+  p {
+    margin: 0;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}

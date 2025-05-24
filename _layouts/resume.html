@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: " en-US" }}">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <style type="text/css" media="print">
+    html,
+    body {
+      margin: 0 auto;
+      padding: 0 auto;
+      font-size: 75%;
+      line-height: 1.1em;
+      max-width: 100%;
+    }
+
+    .dontprint {
+      display: none !important;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+</head>
+
+<body>
+  <p class="dontprint" style="display: flex; align-items: baseline; justify-content: space-between;">
+    <a href="/">‹Back</a>
+    <a href="javascript:if(window.print)window.print()">Print/PDF</a>
+  </p>
+  <br class="dontprint" />
+  {{ content }}
+</body>
+
+</html>

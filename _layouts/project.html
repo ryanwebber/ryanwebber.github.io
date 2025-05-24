@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>{{ page.name }} - {{ site.title }}</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+  <p>
+    <a href="/">‹Back</a>
+  </p>
+  <br />
+  <div style="display: flex; align-items: baseline; justify-content: space-between;">
+    <h1>{{ page.name }}</h1>
+    <span style="display: flex; align-items: center;">
+      <img src="/assets/icons/github-mark.svg" height="12px">
+      &nbsp;
+      <a href="https://github.com/ryanwebber/{{ page.github }}">Source</a>
+    </span>
+  </div>
+  <hr />
+  {{ content }}
+</body>
+
+</html>
