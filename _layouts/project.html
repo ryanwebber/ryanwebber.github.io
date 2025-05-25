@@ -15,11 +15,13 @@
   <br />
   <div style="display: flex; align-items: baseline; justify-content: space-between;">
     <h1>{{ page.name }}</h1>
+    {% if page.source_hidden != true %}
     <span style="display: flex; align-items: center;">
       <img src="/assets/icons/github-mark.svg" height="12px">
       &nbsp;
       <a href="https://github.com/ryanwebber/{{ page.github }}">Source</a>
     </span>
+    {% endif %}
   </div>
   <hr />
   {{ content }}

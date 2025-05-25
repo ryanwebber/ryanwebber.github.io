@@ -42,15 +42,15 @@ I wanted to build.
 ## Improvements
 
 This version of the engine turned out measurably better than the previous one. It supports
-all the [search features of the previous engine](/projects/weechess.html#search), this
-one supports a more nifty improvements:
+all the [search features of the previous engine](/projects/weechess.html#search), plus
+some more nifty improvements:
  - **Quiescence Search**: This is a technique that allows you to search only the most important moves
    in a position. This allows you to search interesting positions deeper.
  - **Iterative Deepening**: This is a technique that allows you to search the tree in a depth-first manner,
    one ply at a time. This seems like it would be wasteful becaues you'd have to re-search the tree for
    depths that have already been searched, but because of the Transposition Tables, this is not a problem.
    In fact, it allows you to more efficiently search because you can choose to search the most promising
-   branches from previous searches first.
+   branches from previous searches first, increasing the effectiveness of alpha-beta pruning.
  - **Multithreading**: Using a variation of an algorithm called [Lazy SMP](https://www.chessprogramming.org/Lazy_SMP),
    search can be parallelized. This is a really cool algorithm -- the way it works is by simply spawning
    multiple threads to search the same tree. By introducing a bit of randomness into the order of moves
