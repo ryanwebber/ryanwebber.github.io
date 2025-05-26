@@ -36,12 +36,12 @@ until it either goes to infinity or reaches a maximum number of iterations.
 The tricky part of rendering the Mandelbrot Set is the zooming. As you start to
 zoom in, you rapidly lose precision in the floating point representation of `c`, and
 the image starts to look like a blurry mess. You can keep using larger and larger
-floating point types, but with most graphics APIs, you'll max out at either 32-bit
-or 64-bit floating point values. Additionally, as you zoom in, you need more and more
-iterations in order to preserve detail.
+floating point types, but without specialized graphics hardware, you'll max out at either
+32-bit or 64-bit floating point values. Additionally, as you zoom in you'll need more and
+more iterations in order to preserve detail, so you won't get very far on the CPU either.
 
-People have been rendering the Mandelbrot Set at _ridiculous_ zoom levels. For some
-perspective, the observable universe is about 10^62 Planck lengths across. It's
+Despite this, people have been rendering the Mandelbrot Set at _ridiculous_ zoom levels.
+For some perspective, the observable universe is about 10^62 Planck lengths across. It's
 easy to find videos of people zooming in on the set to a scale of 10^245. That's
 10^183 times bigger in scale than that of our observable universe. It's just nuts.
 
