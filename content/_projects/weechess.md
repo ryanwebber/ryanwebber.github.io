@@ -18,7 +18,7 @@ at chess, but I found some of the concepts technically interesting, so I dove in
 
 Building an implementation of the game of chess is somewhat straightforward. The data structures
 are pretty obvious, and the rules are extremely well defined. With a bit of time
-and effort, you can get the basic game running. In order ensure you've gotten all
+and effort, you can get the basic game running. In order to ensure you've gotten all
 the rules implemented correctly, it's quite convenient to use an existing chess engine
 to validate legal moves by counting them up to a certain depth for a given position. I
 found quite a few bugs in my implementation this way, mostly around castling.
@@ -45,12 +45,12 @@ but these are the ones I implemented:
    searched positions and reuse them later.
 
 So far we've focused on reducing our search space, but there's another way to speed up search: improve
-search performance. There's a couple of techniques to do this that I implemented, and again I won't
+search performance. There are a couple of techniques to do this that I implemented, and again I won't
 go into too much detail for each:
  - **Bitboards**: This is a technique that allows you to represent the board as a single 64-bit integer. This
    allows you to use bitwise operations to quickly check for legal moves.
  - **Magic Number Tables**: This is a technique that allows you to quickly generate legal moves for a given
-   piece. It's bit manipulation and arithmatic black magic, but it allows you to check the squares a piece
+   piece. It's bit manipulation and arithmetic black magic, but it allows you to check the squares a piece
    can move to without needing to implement rules with loops and conditionals.
 
 Now we've got reasonably fast search, but that's useless if we're no good at evaluating how good a position is.
@@ -84,5 +84,5 @@ There's a couple final things we throw in to the final implementation:
 ## Conclusion
 
 This engine is very very simple in comparison to proper chess engines, but it's good enough to beat me easily.
-I end up [re-implementing this engine in Rust](/projects/weechess-rs.html), and make some further improvements
+I end up [re-implementing this engine in Rust](/projects/weechess-rs), and make some further improvements
 to the search and evaluation functions.

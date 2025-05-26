@@ -26,7 +26,7 @@ Options:
 
 ## About
 
-[Previously, I built a chess engine](/projects/weechess.html).
+[Previously, I built a chess engine](/projects/weechess).
 
 It was pretty good, but there were some design decisions I had made that had become less
 than ideal once I started trying to optimize search. For example, I had no concept of a
@@ -42,12 +42,12 @@ I wanted to build.
 ## Improvements
 
 This version of the engine turned out measurably better than the previous one. It supports
-all the [search features of the previous engine](/projects/weechess.html#search), plus
+all the [search features of the previous engine](/projects/weechess#search), plus
 some more nifty improvements:
  - **Quiescence Search**: This is a technique that allows you to search only the most important moves
    in a position. This allows you to search interesting positions deeper.
  - **Iterative Deepening**: This is a technique that allows you to search the tree in a depth-first manner,
-   one ply at a time. This seems like it would be wasteful becaues you'd have to re-search the tree for
+   one ply at a time. This seems like it would be wasteful because you'd have to re-search the tree for
    depths that have already been searched, but because of the Transposition Tables, this is not a problem.
    In fact, it allows you to more efficiently search because you can choose to search the most promising
    branches from previous searches first, increasing the effectiveness of alpha-beta pruning.
@@ -59,7 +59,7 @@ some more nifty improvements:
    helps avoid most of the thread contention.
 
 This engine spanks the previous one in games. I also setup some tooling to compare versions of the engine
-against eachother, which has helped me tweak and improve the evaluation functions some.
+against each other, which has helped me tweak and improve the evaluation functions some.
 
 ## Thoughts on Rust
 
@@ -72,5 +72,5 @@ There are no novel takes on Rust anymore, but I will share mine:
  * it feels a lot easier to build working implementations than in _some languages_
  * the borrow checker works
 
-It took me a few tries the really get the hang of Rust, but hey, it took me a few tries to get into 
+It took me a few tries to really get the hang of Rust, but hey, it took me a few tries to get into 
 The Office (US) too.

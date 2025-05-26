@@ -57,7 +57,7 @@ and cleaning up after the program exits. There are some good references online a
 to cobble together a basic `crt0` asm file. 
 
 The next step is to build an `init` binary that will be run by the kernel on boot. If we can figure
-out how to link this binary with our `crt0`, then we can start with a inifinte loop and skip
+out how to link this binary with our `crt0`, then we can start with a infinite loop and skip
 even needing a libc. Somewhere around here I get annoyed dealing with plain Makefiles and
 fight my way through setting up a CMake build system that can build the kernel, 
 compile and link our userspace binaries, build the initramfs, and create the bootable image.
@@ -75,14 +75,14 @@ that contains our syscall implementations (with invalid x86_64 calling conventio
 turns out, but thankfully I'll notice and fix this before it bites me).
 
 I create our `unistd.h` header, define the `write` function, and give it a basic implementation
-that just passes the arguments to our syscall implementation. Now if we static link our `init` binary
-against our libc library, we can call `write` with file descriptor 1 (stdout) and print to the screen!
+that just passes the arguments to our syscall implementation. Now if we statically link our `init` binary
+against our libc, we can call `write` with file descriptor 1 (stdout) and print to the screen!
 
 ### 05 - Building More Things
 
 Now that we've got our scaffolding in place, we can start implementing more unix userland binaries
-and libc functions (oh, and libm functions too). I start with some basic binaries like `cat`, `ls`,
-and importantly, a totally non-posix-compliant `sh` shell that can run simple commands.
+and libc functions (oh, and libm functions also). I start with some basic binaries like `cat`, `ls`,
+and importantly, a totally non-POSIX-compliant `sh` shell that can run simple commands.
 
 We're starting to run into trickier things to implement: `malloc`, `printf`, and functions that
 use `FILE` and `DIR` structs. Actually, `malloc` turns out to be pretty easy to implement if
@@ -115,5 +115,5 @@ on my userspace!
 There's a lot more to do here. I want to implement a proper `malloc` that can free memory,
 implement more libc functions, and build more userland binaries. I also want to
 implement a proper shell that can run commands, a terminal emulator that can improve the
-serial console experience, and possibly take this into the modern era with a graphical
+serial-console experience, and possibly take this into the modern era with a graphical
 environment by implementing a framebuffer driver and X11 implementation.

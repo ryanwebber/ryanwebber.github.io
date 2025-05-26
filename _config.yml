@@ -2,6 +2,8 @@ url: "https://ryanwebber.github.io"
 baseurl: ""
 title: "Ryan Webber"
 
+hide_resume: true
+
 collections_dir: content
 collections:
   work:
@@ -23,6 +25,5 @@ collections:
       - raybaby.md
       - blossim.md
       - mandelscope.md
-      - i8080emu.md
       - neyowm.md
       - bore.md

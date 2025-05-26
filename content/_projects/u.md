@@ -36,7 +36,7 @@ Available templates:
 I had an unorganized collection of scripts that were lying around in various directories,
 and I thought it would be interesting to build a small tool to manage them.
 
-There's two novel ideas about this implementation:
+There are two novel ideas about this implementation:
  1. The script manager uses itself to expose the scripts that actually perform script management
     tasks like creating, deleting, and listing scripts.
  2. The scripts, script templates, and script runner are embedded in the release binary as a

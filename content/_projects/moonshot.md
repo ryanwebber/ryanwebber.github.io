@@ -7,7 +7,7 @@ layout: project
 
 ```
 // Definition of a program that is invoked by
-// typiing VERB 00 and NOUN 00 on the DSKY
+// typing VERB 0 and NOUN 0 on the DSKY
 prog {
     .verb = 00;
     .noun = 00;
@@ -55,7 +55,7 @@ translate it into the AGC assembly language.
 ## The Compiler
 
 The compiler has gone through a few iterations. The first version was way overengineered
-and I scrapped it pretty quickly. The current design is a much more simple. It supports
+and I scrapped it pretty quickly. The current design is much less complex. It supports
 a single 15-bit integer type (yes, really), arithmetic operations, and conditional
 statements. The syntax is tightly bound to a task-based runtime model that would provide
 scheduled code execution, similar to the way the actual AGC software worked (but this
@@ -64,7 +64,7 @@ library that provides a few basic functions for interacting with the DSKY and ot
 components of the AGC.
 
 As I mentioned, this whole thing is only partially implemented. I do have integration tests
-stood up that can actually compile and run a simple programs on the Virtual AGC, which I
+stood up that can actually compile and run simple programs on the Virtual AGC, which I
 expect to rely on heavily as I continue to develop the compiler. I come back to this project
 every few months because of how fascinating the AGC is, and I hope to eventually work my way
 towards a complete compiler that can run more complex programs.

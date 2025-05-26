@@ -1,7 +1,7 @@
 ---
 name: rum
 github: rum
-description: A lua-flavoured lisp
+description: A Lua-flavoured lisp
 layout: project
 ---
 
@@ -22,7 +22,7 @@ I decided to build a lisp. Specifically, I wanted an _embedded lisp_, because
 I like the idea of using a lisp as a scripting language for future game
 development projects, and because there's only a couple of embeddable options
 out there. I also thought it might be interesting to try to expose interpreter
-state via meta-programming facilities similar to lua.
+state via meta-programming facilities similar to Lua.
 
 The rest of the story is pretty standard: there's not much complexity to the
 parser, and the tree-walking interpreter is straightforward. Thanks to the 
@@ -33,7 +33,7 @@ for entirely different front-ends and semantics.
 
 While basic functionality is implemented, many standard library modules are
 missing which would make the language actually useful. Rather than spending
-my time implementing this, I've actually been using [fennel](https://fennel-lang.org)
-for my lua-flavoured lisp needs.
+my time implementing this, I've actually been using [Fennel](https://fennel-lang.org)
+for my Lua-flavoured lisp needs.
 
 Like all my other experiments, I'll probably come back to this at some point.

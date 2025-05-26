@@ -6,7 +6,7 @@ layout: project
 ---
 
 ```
-# Print the first 100 fibinacci numbers
+# Print the first 100 Fibonacci numbers
 $ echo 'p1pC{2P+' | gillian
 
 0
@@ -59,6 +59,6 @@ Let's take a look at the above example `p1pC{2P+` to see how this works, charact
 
 When the program terminates, the values on the stack are printed, one per line, giving us our Fibonacci sequence!
 
-The fun of this project is just in the design of the language -- determinging the syntax,
+The fun of this project is just in the design of the language -- determining the syntax,
 coming up with valuable commands, trying to reduce duplicate ways of doing the same thing,
 and making it feel rewarding to solve problems with it. 

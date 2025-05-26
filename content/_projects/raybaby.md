@@ -35,14 +35,14 @@ all this math in shader code, but it's pretty cool to see your scene come to lif
 the first time!
 
 Building on this foundation you can add new geometry types, ambient lighting, focal blur,
-and so on. I also added an immediate-modea GUI to control the camera, a declarative
-DSL for defining the scene, and a few other nicities. To my eyes, the renders actually
+and so on. I also added an immediate-mode GUI to control the camera, a declarative
+DSL for defining the scene, and a few other niceties. To my eyes, the renders actually
 look pretty good! They take a while though, because we've put almost no effort into
 optimizing this thing.
 
 ## The Future
 
 There's a lot of room for improvement here. This implementation barely supports
-meshes, and to do so would require specific spacial partitioning optimizations.
+meshes, and to do so would require specific spatial partitioning optimizations.
 We could add support for textures, more types of lights, and much more. Still, 
 pretty good for ~300 lines of WGSL eh?
