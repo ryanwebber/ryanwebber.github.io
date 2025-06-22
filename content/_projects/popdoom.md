@@ -38,7 +38,7 @@ easy to write referencing the `doomgeneric` headers, and we'll slap a safe Rust 
 ### Running the DOOM Game Loop
 
 DOOM is pretty old. It's no surprise that it has a game loop that is not super compatible with modern
-application event loops. Because I chose to build a GPU-accelerated renderer but DOOM uses a software renderer,
+application event loops. I chose to build a GPU-accelerated renderer but DOOM uses a software renderer.
 I can't just arbitrarily copy the DOOM framebuffer to the screen whenever DOOM tells me to. Instead, we'll
 need to juggle the DOOM game loop and our application event loop separately, and shuttle events back and forth
 between them.
@@ -49,12 +49,13 @@ and control events to the DOOM game loop, and the DOOM game loop will pass frame
 events back to the main application event loop. When the main thread receives a framebuffer, it copies the
 texture data to the GPU to be used as an input to the graphics pipeline next time we render a frame.
 
-This turned out to work surprisingly well!
+This works surprisingly well, and is nice and compatible with any platform our `winit` application
+event loop supports.
 
 ### Rendering DOOM
 
 We've now got a regular application event loop and the DOOM framebuffer in our hands. The next step will
-be to copy the framebuffer to the GPU and blit it to the screen render target. I've set this pipeline up
+be to copy the framebuffer to the GPU and blit it to the screen's render target. I've set this pipeline up
 a few times before from scratch using WGPU, but this time I'll be using a small crate called
 [pixels](https://docs.rs/pixels/latest/pixels/) that takes care of the boilerplate for us. Once
 we initialize a pixels instance, we'll get access to the internal WGPU primitives to build a custom
@@ -62,6 +63,10 @@ render pipeline that will take the DOOM framebuffer as an input texture and rend
  
 Hooking this up into our application event loop is straightforward, because this is exactly how it
 was designed to be used. Bingo-bango, we have the DOOM framebuffer rendered to the screen!
+
+Oh, and now that we can see what's happening on screen, let's also send over keyboard events coming
+in on our application's main event loop to the DOOM game loop via that channel we set up earlier. There's
+only a few keys to handle, but once we do this, we can actually play DOOM. Pretty neat!
 
 ## Rendering DOOM in Pop-Art Style
 
