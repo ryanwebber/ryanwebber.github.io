@@ -18,24 +18,26 @@ designed to be ported to new platforms called [doomgeneric](https://github.com/o
 Ever since I learned about this, I wanted to mess around with it, and recently, I finally had an idea
 that seemed worth pursuing: what would it look like to render DOOM in a pop-art style (because, why not)?
 
-## The Implementation
-
 There are several implementations of DOOM that would allow you to change textures or write shaders,
-but that would skip the fun of binding code directly to the original DOOM source. So instead of doing that,
-we're going to write a custom renderer in Rust and link it against a DOOM library that we'll build.
+but that would skip the fun of binding code directly to the original DOOM source. So here's the plan:
+ * First we'll first build platform-independent DOOM source as a static C library
+ * Then we'll build a Rust application that links against this library and runs the DOOM game loop,
+   passing input events and reading the DOOM framebuffer
+ * Finally, we'll render the DOOM framebuffer to the screen using a custom WGPU pipeline that applies
+   a pop-art style shader to the framebuffer
 
-### Building libdoom
+### 01 - Building libdoom
 
 The first step is to build DOOM as a static library. With the right compiler flags and a few tweaks, this
 basically works out of the box with `doomgeneric`. The [cc](https://docs.rs/cc/latest/cc/) crate takes
 care of compiling the C code and linking it into a static library that we can use in our final Rust binary.
 
-### Wrapping libdoom in Rust
+### 02 - Wrapping libdoom in Rust
 
 Since we're going to be using the C library from Rust, we need to write some bindings. These are pretty
 easy to write referencing the `doomgeneric` headers, and we'll slap a safe Rust API on top of it.
 
-### Running the DOOM Game Loop
+### 03 - Running the DOOM Game Loop
 
 DOOM is pretty old. It's no surprise that it has a game loop that is not super compatible with modern
 application event loops. I chose to build a GPU-accelerated renderer but DOOM uses a software renderer.
@@ -52,7 +54,7 @@ texture data to the GPU to be used as an input to the graphics pipeline next tim
 This works surprisingly well, and is nice and compatible with any platform our `winit` application
 event loop supports.
 
-### Rendering DOOM
+### 04 - Rendering DOOM with WGPU
 
 We've now got a regular application event loop and the DOOM framebuffer in our hands. The next step will
 be to copy the framebuffer to the GPU and blit it to the screen's render target. I've set this pipeline up
@@ -68,7 +70,7 @@ Oh, and now that we can see what's happening on screen, let's also send over key
 in on our application's main event loop to the DOOM game loop via that channel we set up earlier. There's
 only a few keys to handle, but once we do this, we can actually play DOOM. Pretty neat!
 
-## Rendering DOOM in Pop-Art Style
+### 05 - Writing a Pop-Art Style Shader
 
 Oh man, this turned out to be kinda tricky. I was concerned that DOOM would be too dark and gritty
 to be rendered in a pop-art style, but I figured the best way to find out is to try it out. There are
@@ -79,7 +81,9 @@ and experimenting with different blending modes, I finally got something working
 agree that this doesn't look amazing. It looks okay-ish, and some elements of pop-art come through,
 but it's not quite right and stock DOOM is not the best fit for this style.
 
-There are a couple of things I can think of that may improve this:
+### 06 - And Beyond...
+
+There are a couple of things I can think we can improve the pop-art rendering:
  * Render DOOM at a higher resolution. This will help avoid smearing the individual pixels and dots
    together to create cleaner shading bands.
  * Use a different color palette. The DOOM palette is pretty dark and gritty, so it doesn't lend itself
