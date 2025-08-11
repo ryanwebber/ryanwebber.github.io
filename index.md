@@ -7,7 +7,7 @@ title: "Index"
 
 Hello! I'm a software engineer. Here is my [Resume](/resume). Contact me!
 
-## Some things I've built
+## Some things I've built (for fun)
 
 {% for project in site.projects %}
  * [{{ project.name }}]({{ project.url }}) - {{ project.description }}
