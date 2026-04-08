@@ -5,7 +5,7 @@ layout: resume
 
 # Ryan Webber
 
-[wbbr.ryan@gmail.com](mailto:wbbr.ryan@gmail.com) \| [github.com/ryanwebber](https://github.com/ryanwebber)
+[webber@apple.com](mailto:webber@apple.com) · [+1 236-808-7692](tel:236-808-7692)
 
 ---
 
