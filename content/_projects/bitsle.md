@@ -54,6 +54,9 @@ It has:
  * A simple raycasting/overlap testing physics engine (not a full simulation)
  * Opt-in support for a scripting language (Ruby), to build game components in instead of using
    the C API
+ * A REPL client and server backed by the scripting engine. Connect to a running instance of the
+   engine and evaluate arbitrary script, inspect APIs/component definitions and docs, etc. Designed
+   to enable closed-loop agentic development.
  * Hot-reload support, by dynamically linking and loading game code as a shared library 
  * An asset bundling and packing system, combined with a virtual filesystem in-game for loading
    resources
