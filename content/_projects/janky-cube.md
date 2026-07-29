@@ -28,4 +28,5 @@ solving it.
 
 This is a visualizer of that technique: the stages I go through, the sequences of moves I make, the
 orientation I hold the cube in when making those moves, the extra moves that are clearly pointless,
-the backtracking I have to do when I get stuck, and all the other oddities. Enjoy!
+the backtracking I have to do when I get stuck, and all the other oddities. And yes, I really do start
+with the green side first (it was my favourite colour as a kid).
