@@ -13,6 +13,7 @@ collections:
   projects:
     output: true
     order:
+      - janky-cube.md
       - bitsle.md
       - unssh.md
       - cloudcity.md
