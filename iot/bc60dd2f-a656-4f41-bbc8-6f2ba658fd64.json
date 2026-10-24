@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "hdmiPorts": 4,
+  "inputs": [
+    { "id": "appletv", "label": "Apple TV", "port": 1 },
+    { "id": "xbox", "label": "Xbox", "port": 2 },
+    { "id": "switch", "label": "Switch", "port": 3 },
+    { "id": "cable", "label": "Cable", "port": 4 }
+  ],
+  "tools": {
+    "settings": { "label": "Settings", "appId": "com.samsung.tv.coba.setting" },
+    "home": { "label": "Samsung Home", "appId": "com.samsung.tv.csfs" }
+  }
+}

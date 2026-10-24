@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "looks": {},
+  "events": [
+    { "id": "valentines-day", "look": "valentine", "from": "02-14", "greeting": "Happy Valentine's Day", "fx": "romance" },
+    { "id": "birthday-june", "look": "birthday", "from": "06-18", "greeting": "Happy Birthday", "fx": "confetti" },
+    { "id": "birthday-december", "look": "birthday", "from": "12-30", "greeting": "Happy Birthday", "fx": "confetti" },
+    { "id": "anniversary", "look": "anniversary", "from": "09-21", "greeting": "Happy Anniversary", "fx": "toast" },
+    { "id": "canada-day", "look": "canada", "from": "07-01", "greeting": "Happy Canada Day" },
+    { "id": "halloween-night", "look": "halloween", "from": "10-31", "greeting": "Happy Halloween", "fx": "haunt" },
+    { "id": "christmas-day", "look": "holiday", "from": "12-25", "greeting": "Merry Christmas", "fx": "snow" },
+    { "id": "valentines-week", "look": "valentine", "from": "02-07", "to": "02-13", "fx": "romance" },
+    { "id": "halloween", "look": "halloween", "from": "10-01", "to": "10-31", "fx": "haunt" },
+    { "id": "holidays", "look": "holiday", "from": "11-30", "to": "12-26", "fx": "snow" }
+  ]
+}
